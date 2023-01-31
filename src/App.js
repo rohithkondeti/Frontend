@@ -7,8 +7,9 @@ const Home = () => {
     <>
       <Navbar />
       <section className="hero-section">
-        <p>This is </p>
-        <h1> Home Page</h1>
+        <p>WELCOME  </p>
+        <p>TO</p>
+        <h1> FEEDBACK MANAGEMENT SYSTEM </h1>
       </section>
     </>
   );
@@ -43,12 +44,19 @@ const Contact = () => {
     <>
       <Navbar />
       <section className="hero-section">
-        <p>Welcome to </p>
-        <h1> Contact Page</h1>
+        <p>Group Members </p>
+        <h1> Hitesh</h1>
+        <h1>Rohith</h1>
+        <h1>Justin</h1>
       </section>
     </>
   );
 };
+
+
+ 
+
+
 
 const App = () => {
   return (
@@ -61,13 +69,23 @@ const App = () => {
         <About />
       </Route>
 
-      <Route path="/service">
+      <Route path="/Product">
         <Service />
       </Route>
 
       <Route path="/contact">
         <Contact />
       </Route>
+
+
+      <Route path="/new product">
+        <Contact />
+      </Route>
+
+      <Route path="/top rated product">
+        <Contact />
+      </Route>
+
     </Switch>
   );
 };
