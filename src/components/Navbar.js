@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [showMediaIcons, setShowMediaIcons] = useState(false);
   const [showProductDropdown, setShowProductDropdown] = useState(false);
+  const [showLoginDropdown, setShowLoginDropdown] = useState(false);
 
   return (
     <>
@@ -29,48 +30,36 @@ const Navbar = () => {
             <li>
               <NavLink to="/about">about</NavLink>
             </li>
-            <li className="dropdown">
-              <span
-                className="dropdown-title"
-                onClick={() => setShowProductDropdown(!showProductDropdown)}
-              >
-                Product
-              </span>
-              {showProductDropdown && (
-                <ul className="dropdown-content">
-                  <li>
-                    <NavLink to="/All-products">All Products</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/rating">Rating</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/id">Id</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/name">Name</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/top-rated">Top Rated</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/least-rated">Least Rating</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/company">Company</NavLink>
-                  </li>
-                </ul>
-              )}
+            <li>
+              <NavLink to="/product">Product</NavLink>
             </li>
+            
             <li>
               <NavLink to="/contact">contact</NavLink>
             </li>
             
+            <li className="dropdown">
+              <span
+                className="dropdown-title"
+                onClick={() => setShowLoginDropdown(!showLoginDropdown)}
+              >
+                Login
+              </span>
+              {showLoginDropdown && (
+                <ul className="dropdown-content">
+                  <li>
+                    <NavLink to="/Login">Login</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/Signup">Sign up</NavLink>
+                  </li>
+                </ul>
+              )}
+            </li>
           </ul>
         </div>
       </nav>
     </>
   );
 };
-
 export default Navbar;
