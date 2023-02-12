@@ -22,7 +22,7 @@ return (
 <div className="menu-link">
       <ul>
         <li>
-          <NavLink to="/">All</NavLink>
+          <NavLink to="/all">All</NavLink>
         </li>
         <li>
           <NavLink to="/productid">Product Id</NavLink>
@@ -37,7 +37,7 @@ return (
               {showCategoryDropdown && (
                 <ul className="dropdown-content">
                   <li>
-                    <NavLink to="/Electronics">Electronics</NavLink>
+                    <NavLink to="/Electronic">Electronics</NavLink>
                   </li>
                   <li>
                     <NavLink to="/fashion">Fashion</NavLink>
