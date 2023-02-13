@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 const Navbar1 = () => {
     const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
     const [showCompanyDropdown, setShowCompanyDropdown] = useState(false);
+    const [showRatedDropdown, setShowRatedDropdown] = useState(false);
     
 
 return (
@@ -61,56 +62,38 @@ return (
               {showCompanyDropdown && (
                 <ul className="dropdown-content">
                   <li>
-                    <NavLink to="/Galaxy F13">Galaxy F13</NavLink>
+                    <NavLink to="/Samsung ">Samsung</NavLink>
                   </li>
                   <li>
-                      <NavLink to="/Yeezy 450">Yeezy 450</NavLink>
+                      <NavLink to="/Adidas">Adidas</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/V23e">V23e</NavLink>
+                    <NavLink to="/Vivo">Vivo</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/TUF Gaming A17 ">TUF Gaming A17 </NavLink>
+                    <NavLink to="/Asus ">Asus </NavLink>
                   </li><li>
-                    <NavLink to="/C30">C30</NavLink>
+                    <NavLink to="/Realme">Realme</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/Storm Football">Storm Football</NavLink>
+                    <NavLink to="/NIVIA">NIVIA</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/Astra Football"> Astra Football</NavLink>
+                    <NavLink to="/MARMAN"> MARMAN</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/Slim fit shirt">Slim fit shirt</NavLink>
+                    <NavLink to="/Louis philippe">Louis philippe</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/Mavis 350">Mavis 350</NavLink>
+                    <NavLink to="/Yonex">Yonex</NavLink>
                   </li><li>
-                    <NavLink to="/Airpods 131Pro">Airpods 131Pro</NavLink>
+                    <NavLink to="/Boat">Boat</NavLink>
                   </li><li>
-                    <NavLink to="/Rockerz510">Rockerz510</NavLink>
+                    <NavLink to="/APPLE">APPLE</NavLink>
                   </li><li>
-                    <NavLink to="/S22">S22</NavLink>
-                  </li><li>
-                    <NavLink to="/VivoBook K15">VivoBook K15</NavLink>
-                  </li><li>
-                    <NavLink to="/Narzo50i">Narzo50i</NavLink>
-                  </li><li>
-                    <NavLink to="/Beast Gym bag4">Beast Gym bag4</NavLink>
+                    <NavLink to="/Nike">Nike</NavLink>
                   </li>
-                  <li>
-                    <NavLink to="/T1">T1</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/X80 pro">X80 pro</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/iphone 14">iphone 14</NavLink>
-                  </li><li>
-                    <NavLink to="/iphone 11">iphone 11</NavLink>
-                  </li><li>
-                    <NavLink to="/Air Jordan 1 Retro High OG">Air Jordan 1 Retro High OG</NavLink>
-                  </li>
+                  
                 </ul>
               )}
         
@@ -118,6 +101,28 @@ return (
         </li>
         <li>
         <NavLink to="/name">Name</NavLink>
+        </li>
+        <li className="dropdown">
+              <span
+                className="dropdown-title"
+                onClick={() => setShowRatedDropdown(!showRatedDropdown)}
+              >
+                Rated
+              </span>
+              {showRatedDropdown && (
+                <ul className="dropdown-content">
+                  <li>
+                    <NavLink to="/topratedproducts">Top Rated </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/leastratedproducts">Least Rated</NavLink>
+                  </li>
+                   
+                   
+                </ul>
+              )}
+            
+          
         </li>
       </ul>
     </div>

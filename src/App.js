@@ -10,6 +10,7 @@ import Electronic from "./components/Electronic";
 import Fashion from "./components/Fashion";
 import Sports from "./components/Sports";
 import Name from "./components/Name";
+import Samsung from "./components/Samsung";
 const Home = () => {
 return (
 <>
@@ -186,6 +187,10 @@ const App = () => {
       </Route>
       <Route exact path="/sports">
         <Sports />
+      </Route>
+
+      <Route exact path="/samsung">
+        <Samsung />
       </Route>
        
        
