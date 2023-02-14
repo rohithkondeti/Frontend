@@ -23,10 +23,13 @@ return (
 <div className="menu-link">
       <ul>
         <li>
-          <NavLink to="/all">All</NavLink>
+          <NavLink to="/all">All Products</NavLink>
         </li>
         <li>
           <NavLink to="/productid">Product Id</NavLink>
+        </li>
+        <li>
+        <NavLink to="/name">Product Name</NavLink>
         </li>
         <li className="dropdown">
               <span
@@ -99,9 +102,7 @@ return (
         
         
         </li>
-        <li>
-        <NavLink to="/name">Name</NavLink>
-        </li>
+        
         <li className="dropdown">
               <span
                 className="dropdown-title"

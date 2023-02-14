@@ -11,6 +11,20 @@ import Fashion from "./components/Fashion";
 import Sports from "./components/Sports";
 import Name from "./components/Name";
 import Samsung from "./components/Samsung";
+import TopRatedProducts from "./components/TopRatedProducts";
+import LeastRatedProducts from "./components/LeastRatedProducts";
+import Adidas from "./components/Adidas";
+import Vivo from "./components/Vivo";
+import Asus from "./components/Asus";
+import Realme from "./components/Realme";
+import Nivia from "./components/Nivia";
+import Marman from "./components/Marman";
+import Louisphilippe from "./components/Louisphilippe";
+import Yonex from "./components/Yonex";
+import Boat from "./components/Boat";
+import Apple from "./components/Apple";
+import Nike from "./components/Nike";
+
 const Home = () => {
 return (
 <>
@@ -192,8 +206,53 @@ const App = () => {
       <Route exact path="/samsung">
         <Samsung />
       </Route>
-       
-       
+      <Route exact path="/topratedproducts">
+        <TopRatedProducts />
+      </Route>
+
+      <Route exact path="/leastratedproducts">
+        <LeastRatedProducts />
+      </Route>
+      <Route exact path="/adidas">
+        <Adidas />
+      </Route>
+      <Route exact path="/vivo">
+        <Vivo />
+      </Route>
+      <Route exact path="/asus">
+        <Asus />
+      </Route>
+      <Route exact path="/realme">
+        <Realme />
+      </Route>
+
+      <Route exact path="/nivia">
+        <Nivia />
+      </Route>
+      <Route exact path="/marman">
+        <Marman />
+      </Route>
+
+      <Route exact path="/Louis philippe">
+        <Louisphilippe />
+      </Route>
+
+      <Route exact path="/Yonex">
+        <Yonex />
+      </Route>
+
+      <Route exact path="/Boat">
+        <Boat />
+      </Route>
+
+      <Route exact path="/Apple">
+        <Apple />
+      </Route>
+
+      <Route exact path="/Nike">
+        <Nike />
+      </Route>
+
     </Switch>
   );
 };

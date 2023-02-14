@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const All = () => {
+const Louisphilippe = () => { 
   const [data2, setData2] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/product/products`, {
+        const response = await axios.get(`http://localhost:8081/product/products/Louis%20philippe`, {
           headers: { 'Access-Control-Allow-Origin': '*' },
           proxy: { 
             host: 'http://cors-anywhere.herokuapp.com/',
@@ -41,4 +41,4 @@ const All = () => {
   );
 };
 
-export default All;
+export default Louisphilippe;

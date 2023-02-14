@@ -34,24 +34,30 @@ const ProductId = () => {
         <div className="dialog-body">
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="product-id">Enter Product ID:</label>
+              <label htmlFor="product-id">Enter Product Id:</label>
               <input
                 type="text"
                 id="product-id"
                 name='productId'
                 className="form-control"
-                placeholder="Enter Product ID"
+                placeholder="Enter Product Id"
                 value={productId}
                 onChange={(event) => setProductId(event.target.value)}
               />
             </div>
-            <button className="submit-btn" type="submit" >Submit</button>
+            <button className="submit-btn" type="submit">Submit</button>
           </form> 
         </div>
       </div>
     ) : (
-      <div>
-        {JSON.stringify(productData)}
+      <div className="product-details">
+        <h3>Product Details</h3>
+        <p><b>Product Id:</b> {productData.id}</p>
+        <p><b>Product Name:</b> {productData.productName}</p>
+        <p><b>Company Name:</b> {productData.companyName}</p>
+        <p><b>Category:</b> {productData.category}</p>
+        <p><b>Price:</b> {productData.price}</p>
+        <p><b>Rating:</b> {productData.rating}</p>
       </div>
     )
   );
