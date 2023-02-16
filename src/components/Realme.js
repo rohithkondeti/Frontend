@@ -7,7 +7,7 @@ const Realme = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/product/products/realme`, {
+        const response = await axios.get(`http://localhost:8081/product/products/Realme`, {
           headers: { 'Access-Control-Allow-Origin': '*' },
           proxy: { 
             host: 'http://cors-anywhere.herokuapp.com/',

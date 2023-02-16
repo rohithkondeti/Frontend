@@ -24,6 +24,8 @@ import Yonex from "./components/Yonex";
 import Boat from "./components/Boat";
 import Apple from "./components/Apple";
 import Nike from "./components/Nike";
+import Login from "./components/Login";
+import SignUp from "./components/Signup";
 
 const Home = () => {
 return (
@@ -86,46 +88,46 @@ return (
 
  
 
-const Login = () => {
-  return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
-      <form style={{ width: "30%", padding: "2rem", background: "#f2f2f2", borderRadius: "10px" }}>
-        <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>Login</h1>
-        <div style={{ marginBottom: "1rem" }}>
-          <label htmlFor="username">Username:</label>
-          <input type="text" id="username" name="username" style={{ width: "100%", padding: ".5rem" }} />
-        </div>
-        <div style={{ marginBottom: "1rem" }}>
-          <label htmlFor="password">Password:</label>
-          <input type="password" id="password" name="password" style={{ width: "100%", padding: ".5rem" }} />
-        </div>
-        <button type="submit" style={{ width: "100%", padding: ".5rem", background: "lightblue", border: "none", borderRadius: "5px", color: "#fff" }}>
-          Submit
-        </button>
-      </form>
-    </div>
-  );
-};
+// const Login = () => {
+//   return (
+//     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+//       <form style={{ width: "30%", padding: "2rem", background: "#f2f2f2", borderRadius: "10px" }}>
+//         <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>Login</h1>
+//         <div style={{ marginBottom: "1rem" }}>
+//           <label htmlFor="username">Username:</label>
+//           <input type="text" id="username" name="username" style={{ width: "100%", padding: ".5rem" }} />
+//         </div>
+//         <div style={{ marginBottom: "1rem" }}>
+//           <label htmlFor="password">Password:</label>
+//           <input type="password" id="password" name="password" style={{ width: "100%", padding: ".5rem" }} />
+//         </div>
+//         <button type="submit" style={{ width: "100%", padding: ".5rem", background: "lightblue", border: "none", borderRadius: "5px", color: "#fff" }}>
+//           Submit
+//         </button>
+//       </form>
+//     </div>
+//   );
+// };
 
-const SignUp = () => {
-  return (
+// const SignUp = () => {
+//   return (
   
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
-      <h2>Sign Up</h2>
-      <form style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '50%' }}>
-        <input type="text" placeholder="Name" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
-        <input type="email" placeholder="Email" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
-        <input type="tel" placeholder="Phone Number" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
-        <input type="text" placeholder="Address" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
-        <input type="text" placeholder="Username" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
-        <input type="password" placeholder="Password" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
-        <input type="password" placeholder="Re-enter Password" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
+//     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+//       <h2>Sign Up</h2>
+//       <form style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '50%' }}>
+//         <input type="text" placeholder="Name" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
+//         <input type="email" placeholder="Email" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
+//         <input type="tel" placeholder="Phone Number" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
+//         <input type="text" placeholder="Address" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
+//         <input type="text" placeholder="Username" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
+//         <input type="password" placeholder="Password" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
+//         <input type="password" placeholder="Re-enter Password" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
         
-        <button type="submit" style={{ margin: '10px 0', padding: '10px', width: '100%', backgroundColor: 'blue', color: 'white' }}>Sign Up</button>
-      </form>
-    </div>
-    );
-  };
+//         <button type="submit" style={{ margin: '10px 0', padding: '10px', width: '100%', backgroundColor: 'blue', color: 'white' }}>Sign Up</button>
+//       </form>
+//     </div>
+//     );
+//   };
 
 const Contact = () => {
 return (
@@ -252,6 +254,15 @@ const App = () => {
       <Route exact path="/Nike">
         <Nike />
       </Route>
+
+      <Route exact path="/login">
+        <Login />
+      </Route>
+
+      <Route exact path="/sigup">
+        <SignUp />
+      </Route>
+
 
     </Switch>
   );

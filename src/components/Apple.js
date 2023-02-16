@@ -7,7 +7,7 @@ const Apple = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/product/products/Apple`, {
+        const response = await axios.get(`http://localhost:8081/product/products/APPLE`, {
           headers: { 'Access-Control-Allow-Origin': '*' },
           proxy: { 
             host: 'http://cors-anywhere.herokuapp.com/',

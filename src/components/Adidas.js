@@ -7,7 +7,7 @@ const Adidas = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/product/products/adidas`, {
+        const response = await axios.get(`http://localhost:8081/product/products/Adidas`, {
           headers: { 'Access-Control-Allow-Origin': '*' },
           proxy: { 
             host: 'http://cors-anywhere.herokuapp.com/',

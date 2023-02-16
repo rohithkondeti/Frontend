@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Name = ( ) => {
+const ProductName = () => {
   const [productName, setProductName] = useState('');
-  const [data2, setData2] = useState(null);
+  const [productData, setProductData] = useState(null);
 
   const handleSubmit = async(event) => {
     event.preventDefault();
-    let name=event.target.elements.productName.value.toLowerCase();
-    console.log(name)
+    let name = event.target.elements.productName.value;
+    console.log(name);
     try {
       const response = await axios.get(`http://localhost:8081/product/productname/${name}`, {
         headers: { 'Access-Control-Allow-Origin': '*' },
@@ -17,7 +17,7 @@ const Name = ( ) => {
           port: 80
         }
       });
-      setData2(response.data);
+      setProductData(response.data);
       console.log(response.data);
     } catch (error) {
       console.error(error);
@@ -25,7 +25,7 @@ const Name = ( ) => {
   };
 
   return (
-    (!data2) ? (
+    (!productData) ? (
       <div className="dialog-container">
         <div className="dialog-header">
           <h3>Product Name</h3>
@@ -52,14 +52,14 @@ const Name = ( ) => {
     ) : (
       <div className="product-details">
         <h3>Product Details</h3>
-        <p><b>Product Name:</b> {data2.productName}</p>
-        <p><b>Company Name:</b> {data2.companyName}</p>
-        <p><b>Category:</b> {data2.category}</p>
-        <p><b>Price:</b> {data2.price}</p>
-        <p><b>Rating:</b> {data2.rating}</p>
+        <p><b>Product Name:</b> {productData.productName}</p>
+        <p><b>Company Name:</b> {productData.companyName}</p>
+        <p><b>Category:</b> {productData.category}</p>
+        <p><b>Price:</b> {productData.price}</p>
+        <p><b>Rating:</b> {productData.rating}</p>
       </div>
     )
   );
 };
 
-export default Name;
+export default ProductName;

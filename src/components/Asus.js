@@ -7,7 +7,7 @@ const Asus = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/product/products/asus`, {
+        const response = await axios.get(`http://localhost:8081/product/products/Asus`, {
           headers: { 'Access-Control-Allow-Origin': '*' },
           proxy: { 
             host: 'http://cors-anywhere.herokuapp.com/',

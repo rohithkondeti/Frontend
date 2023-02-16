@@ -7,7 +7,7 @@ const Vivo = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8081/product/products/vivo`, {
+        const response = await axios.get(`http://localhost:8081/product/products/Vivo`, {
           headers: { 'Access-Control-Allow-Origin': '*' },
           proxy: { 
             host: 'http://cors-anywhere.herokuapp.com/',
