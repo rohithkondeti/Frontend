@@ -5,8 +5,8 @@ const Dummy = () => {
   const [emailId, setEmailId] = useState('');
   const [phoneNo, setPhoneNo] = useState('');
   const [address, setAddress] = useState('');
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [userName, setuserName] = useState('');
+  const [password, setpassword] = useState('');
 
   function saveData() {
     let data = {
@@ -14,7 +14,7 @@ const Dummy = () => {
       emailId,
       phoneNo,
       address,
-      username,
+      userName,
       password
     };
 
@@ -47,9 +47,9 @@ const Dummy = () => {
         <label>Address:</label>
         <input type='text' name='address' value={address} onChange={(e) => {setAddress(e.target.value)}} />
         <label>Username:</label>
-        <input type='text' name='username' value={username} onChange={(e) => {setUsername(e.target.value)}} />
+        <input type='text' name='username' value={userName} onChange={(e) => {setuserName(e.target.value)}} />
         <label>Password:</label>
-        <input type='password' name='password' value={password} onChange={(e) => {setPassword(e.target.value)}} />
+        <input type='password' name='password' value={password} onChange={(e) => {setpassword(e.target.value)}} />
         <button type='button' onClick={saveData}>Submit</button>
       </form>
     </div>
