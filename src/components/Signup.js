@@ -1,23 +1,59 @@
+import React, { useState } from 'react';
 
-const SignUp = () => {
-    return (
-    
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
-        <h2>Sign Up</h2>
-        <form style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '50%' }}>
-          <input type="text" placeholder="Name" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
-          <input type="email" placeholder="Email" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
-          <input type="tel" placeholder="Phone Number" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
-          <input type="text" placeholder="Address" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
-          <input type="text" placeholder="Username" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
-          <input type="password" placeholder="Password" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
-          <input type="password" placeholder="Re-enter Password" style={{ margin: '10px 0', padding: '10px', width: '100%' }} />
-          
-          <button type="submit" style={{ margin: '10px 0', padding: '10px', width: '100%', backgroundColor: 'blue', color: 'white' }}>Sign Up</button>
-        </form> 
-      </div>
-      );
+const Dummy = () => {
+  const [name, setName] = useState('');
+  const [emailId, setEmailId] = useState('');
+  const [phoneNo, setPhoneNo] = useState('');
+  const [address, setAddress] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  function saveData() {
+    let data = {
+      name,
+      emailId,
+      phoneNo,
+      address,
+      username,
+      password
     };
-    
 
-    export default SignUp;
+    fetch('http://localhost:8082/customer/registercustomer', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    })
+    .then((resp) => {
+      resp.json()
+      .then((result) => {
+        console.warn('result', result);
+      })
+    })
+  }
+
+  return (
+    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+      <h1>Register</h1>
+      <form style={{display: 'flex', flexDirection: 'column', width: '300px'}}>
+        <label>Name:</label>
+        <input type='text' name='name' value={name} onChange={(e) => {setName(e.target.value)}} />
+        <label>Email:</label>
+        <input type='text' name='email' value={emailId} onChange={(e) => {setEmailId(e.target.value)}} />
+        <label>Phone:</label>
+        <input type='text' name='phone' value={phoneNo} onChange={(e) => {setPhoneNo(e.target.value)}} />
+        <label>Address:</label>
+        <input type='text' name='address' value={address} onChange={(e) => {setAddress(e.target.value)}} />
+        <label>Username:</label>
+        <input type='text' name='username' value={username} onChange={(e) => {setUsername(e.target.value)}} />
+        <label>Password:</label>
+        <input type='password' name='password' value={password} onChange={(e) => {setPassword(e.target.value)}} />
+        <button type='button' onClick={saveData}>Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default Dummy;
