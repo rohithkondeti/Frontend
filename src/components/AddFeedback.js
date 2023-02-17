@@ -1,20 +1,20 @@
 import { useState } from "react";
 
 const AddFeedback = () => {
-  const [productId, setproductId] = useState("");
-  const [feedback, setfeedback] = useState("");
-  const [rating, setrating] = useState("");
+  const [productId, setProductId] = useState("");
+  const [feedback, setFeedback] = useState("");
+  const [rating, setRating] = useState("");
 
-  const handleproductIdChange = (event) => {
-    setproductId(event.target.value);
+  const handleProductIdChange = (event) => {
+    setProductId(event.target.value);
   };
 
-  const handlefeedbackChange = (event) => {
-    setfeedback(event.target.value);
+  const handleFeedbackChange = (event) => {
+    setFeedback(event.target.value);
   };
 
-  const handleratingChange = (event) => {
-    setrating(event.target.value);
+  const handleRatingChange = (event) => {
+    setRating(event.target.value);
   };
 
   const handleSubmit = (event) => {
@@ -42,37 +42,31 @@ const AddFeedback = () => {
   };
 
   return (
-    <div>
+    <div className="add-feedback">
       <h2>Add Feedback</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="product-id">Product ID:</label>
-          <input
-            type="text"
-            id="product-id"
-            value={productId}
-            onChange={handleproductIdChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="feedback">Feedback:</label>
-          <textarea
-            id="feedback"
-            value={feedback}
-            onChange={handlefeedbackChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="rating">Rating:</label>
-          <input
-            type="number"
-            id="rating"
-            min="1"
-            max="5"
-            value={rating}
-            onChange={handleratingChange}
-          />
-        </div>
+        <label htmlFor="product-id">Product ID:</label>
+        <input
+          type="text"
+          id="product-id"
+          value={productId}
+          onChange={handleProductIdChange}
+        />
+        <label htmlFor="feedback">Feedback:</label>
+        <textarea
+          id="feedback"
+          value={feedback}
+          onChange={handleFeedbackChange}
+        />
+        <label htmlFor="rating">Rating:</label>
+        <input
+          type="number"
+          id="rating"
+          min="1"
+          max="5"
+          value={rating}
+          onChange={handleRatingChange}
+        />
         <button type="submit">Submit</button>
       </form>
     </div>

@@ -27,6 +27,8 @@ import Nike from "./components/Nike";
 import Login from "./components/Login";
 import SignUp from "./components/Signup";
 import AddFeedback from "./components/AddFeedback";
+import GetFeedback from "./components/GetFeedback";
+
 
 const Home = () => {
 return (
@@ -265,6 +267,9 @@ const App = () => {
       </Route>
       <Route exact path="/addfeedback">
         <AddFeedback />
+      </Route>
+      <Route exact path="/getfeedback">
+        <GetFeedback />
       </Route>
 
 
