@@ -7,6 +7,7 @@ const Navbar1 = () => {
     const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
     const [showCompanyDropdown, setShowCompanyDropdown] = useState(false);
     const [showRatedDropdown, setShowRatedDropdown] = useState(false);
+    const [showFeedbackDropdown, setShowFeedbackDropdown] = useState(false);
     
 
 return (
@@ -25,12 +26,90 @@ return (
         <li>
           <NavLink to="/all">All Products</NavLink>
         </li>
+        <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
         <li>
           <NavLink to="/productid">Product Id</NavLink>
         </li>
+        <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
         <li>
         <NavLink to="/name">Product Name</NavLink>
         </li>
+        <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
         <li className="dropdown">
               <span
                 className="dropdown-title"
@@ -55,6 +134,32 @@ return (
             
           
         </li>
+        <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
         <li className="dropdown">
               <span
                 className="dropdown-title"
@@ -102,6 +207,32 @@ return (
         
         
         </li>
+        <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
         
         <li className="dropdown">
               <span
@@ -123,9 +254,58 @@ return (
                 </ul>
               )}
             
-          
+            
         </li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li><li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li className="dropdown">
+              <span
+                className="dropdown-title"
+                onClick={() => setShowFeedbackDropdown(!showFeedbackDropdown)}
+              >
+                Feedback 
+              </span>
+              {showFeedbackDropdown && (
+                <ul className="dropdown-content">
+                  <li>
+                    <NavLink to="/addfeedback">Add Feedback </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/getfeedback">View Feedback</NavLink>
+                  </li>
+                   
+                   
+                </ul>
+              )}
+              </li>
       </ul>
+      
+      
     </div>
   </nav>
 </>

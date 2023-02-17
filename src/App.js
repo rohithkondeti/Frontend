@@ -26,6 +26,7 @@ import Apple from "./components/Apple";
 import Nike from "./components/Nike";
 import Login from "./components/Login";
 import SignUp from "./components/Signup";
+import AddFeedback from "./components/AddFeedback";
 
 const Home = () => {
 return (
@@ -137,7 +138,7 @@ return (
 <p>Group Members </p>
 <h1> Hitesh</h1>
 <h1>Rohith</h1>
-<h1>Justin</h1>
+
 </section>
 </>
 );
@@ -261,6 +262,9 @@ const App = () => {
 
       <Route exact path="/sigup">
         <SignUp />
+      </Route>
+      <Route exact path="/addfeedback">
+        <AddFeedback />
       </Route>
 
 
