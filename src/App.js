@@ -28,6 +28,7 @@ import Login from "./components/Login";
 import SignUp from "./components/Signup";
 import AddFeedback from "./components/AddFeedback";
 import GetFeedback from "./components/GetFeedback";
+import UpdateRating from "./components/UpdateRating";
 
 
 const Home = () => {
@@ -270,6 +271,9 @@ const App = () => {
       </Route>
       <Route exact path="/getfeedback">
         <GetFeedback />
+      </Route>
+      <Route exact path="/updaterating">
+        <UpdateRating />
       </Route>
 
 

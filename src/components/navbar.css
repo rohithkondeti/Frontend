@@ -709,3 +709,41 @@ button {
 button:hover {
   background-color: #0D47A1;
 }
+.update-rating {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.update-rating form {
+  display: flex;
+  flex-direction: column;
+}
+
+.update-rating label {
+  margin-bottom: 10px;
+}
+
+.update-rating input {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.update-rating button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.update-rating button:hover {
+  background-color: #0069d9;
+}
+
+.update-rating p {
+  margin-bottom: 10px;
+}

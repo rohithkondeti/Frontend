@@ -298,6 +298,9 @@ return (
                   <li>
                     <NavLink to="/getfeedback">View Feedback</NavLink>
                   </li>
+                  <li>
+                    <NavLink to="/updaterating">UpdateRating</NavLink>
+                  </li>
                    
                    
                 </ul>
