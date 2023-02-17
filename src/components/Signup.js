@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Dummy = () => {
+const Signup = () => {
   const [name, setName] = useState('');
   const [emailId, setEmailId] = useState('');
   const [phoneNo, setPhoneNo] = useState('');
@@ -56,4 +56,4 @@ const Dummy = () => {
   );
 }
 
-export default Dummy;
+export default Signup;
