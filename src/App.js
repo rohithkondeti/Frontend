@@ -29,6 +29,8 @@ import SignUp from "./components/Signup";
 import AddFeedback from "./components/AddFeedback";
 import GetFeedback from "./components/GetFeedback";
 import UpdateRating from "./components/UpdateRating";
+import UpdateCustomer from "./components/UpdateCustomer";
+import UpdateProfile from "./components/UpdateProfile";
 
 
 const Home = () => {
@@ -275,7 +277,12 @@ const App = () => {
       <Route exact path="/updaterating">
         <UpdateRating />
       </Route>
-
+      <Route exact path="/updatecustomer">
+        <UpdateCustomer />
+      </Route>
+      <Route exact path="/updateprofile">
+        <UpdateProfile />
+      </Route>
 
     </Switch>
   );
