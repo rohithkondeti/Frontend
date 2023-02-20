@@ -7,8 +7,19 @@ const Signup = () => {
   const [address, setAddress] = useState('');
   const [userName, setuserName] = useState('');
   const [password, setpassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   function saveData() {
+    // Check if email address is valid before submitting form data
+    if (!emailId.includes('@')) {
+      setErrorMessage('Invalid email address');
+      return;
+    }
+    // Check if phone number is valid before submitting form data
+    if (phoneNo.length !== 10) {
+      setErrorMessage('Phone number should be 10 digits');
+      return;
+    }
     let data = {
       name,
       emailId,
@@ -30,18 +41,21 @@ const Signup = () => {
       resp.json()
       .then((result) => {
         console.warn('result', result);
+        // Redirect to home page after successful registration
+        window.location.href = '/Login';
       })
     })
   }
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#f2f2f2'}}>
       <h1>Register</h1>
       <form style={{display: 'flex', flexDirection: 'column', width: '300px'}}>
         <label>Name:</label>
         <input type='text' name='name' value={name} onChange={(e) => {setName(e.target.value)}} />
         <label>Email:</label>
         <input type='text' name='email' value={emailId} onChange={(e) => {setEmailId(e.target.value)}} />
+        <span style={{ color: 'red' }}>{errorMessage}</span>
         <label>Phone:</label>
         <input type='text' name='phone' value={phoneNo} onChange={(e) => {setPhoneNo(e.target.value)}} />
         <label>Address:</label>
