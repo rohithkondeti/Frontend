@@ -54,7 +54,7 @@ return (
     Product Name
   </NavLink>
 </li>
-        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <li className="dropdown">
 <span
   className="dropdown-title"

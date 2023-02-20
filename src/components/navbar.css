@@ -946,3 +946,15 @@ p {
   justify-content: center;
   align-items: center;
 }
+
+.main-nav {
+  background-color: #ffc0cb; /* Change this to your desired color */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 50px;
+  position: relative;
+  z-index: 1;
+}
+

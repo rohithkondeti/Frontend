@@ -24,8 +24,8 @@ const Login = () => {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
-      <form style={{ width: "30%", padding: "2rem", background: "#f2f2f2", borderRadius: "10px" }} onSubmit={handleSubmit}>
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", background: "#55d99f" }}>
+      <form style={{ width: "30%", padding: "2rem", borderRadius: "10px", background: "#fff" }} onSubmit={handleSubmit}>
         <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>Login</h1>
         <div style={{ marginBottom: "1rem" }}>
           <label htmlFor="username">Username:</label>
