@@ -30,7 +30,7 @@ const Vivo = () => {
         {data2.map(product => (
           <div style={{width: '400px', height: '200px', background: '#f2f2f2', margin: '20px', textAlign: 'center', padding: '20px'}}>
             <h2 style={{color: '#0000ff'}}>{product.productName}</h2>
-            <p><b>Company Name:</b> {product.companyName}</p>
+            {/* <p><b>Company Name:</b> {product.companyName}</p> */}
             <p><b>Category:</b> {product.category}</p>
             <p><b>Price:</b> {product.price}</p>
             <p><b>Rating:</b> {product.rating}</p>
