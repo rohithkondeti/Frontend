@@ -23,7 +23,7 @@ const Navbar1 = () => {
 
 return (
 <>
-<nav className="main-nav">
+<nav className="main-nav1">
 {/* 1st logo part */}
 <div className="logo">
 <h2>

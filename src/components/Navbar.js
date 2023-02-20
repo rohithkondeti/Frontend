@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="main-nav">
+      <nav className="main-nav" style={{backgroundColor: ""}}>
         {/* 1st logo part  */}
         <div className="logo">
           <h2>
