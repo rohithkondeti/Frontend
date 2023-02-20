@@ -19,14 +19,16 @@ const AddFeedback = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+  
     fetch("http://localhost:8083/feedback/addfeedback", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ productId, feedback, rating }),
     })
       .then((response) => {
-        if (!response.ok) {
+        if (response.ok) {
+          alert("Feedback successfully added");
+        } else {
           throw new Error("Failed to submit feedback");
         }
         return response.json();
@@ -37,9 +39,11 @@ const AddFeedback = () => {
       })
       .catch((error) => {
         console.error("Error:", error);
+        alert("Feedback cannot be added since the product with the given ID does not exists.");
         // Optionally display an error message to the user
       });
   };
+  
 
   return (
     <div className="add-feedback">
@@ -60,13 +64,15 @@ const AddFeedback = () => {
         />
         <label htmlFor="rating">Rating:</label>
         <input
-          type="number"
-          id="rating"
-          min="1"
-          max="5"
-          value={rating}
-          onChange={handleRatingChange}
-        />
+  type="number"
+  id="rating"
+  min="1"
+  max="5"
+  step="0.1"
+  value={rating}
+  onChange={handleRatingChange}
+/>
+
         <button type="submit">Submit</button>
       </form>
     </div>

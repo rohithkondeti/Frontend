@@ -68,7 +68,7 @@ const ProductName = () => {
               </tr>
               <tr>
                 <td className="product-details-label">Price:</td>
-                <td className="product-details-value">${productData.price.toFixed(2)}</td>
+                <td className="product-details-value">{productData.price.toFixed(2)}</td>
               </tr>
               <tr>
                 <td className="product-details-label">Rating:</td>

@@ -127,7 +127,7 @@ return (
     </ul>
   )}
 </li>
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <li className="dropdown">
 <span
   className="dropdown-title"
@@ -152,7 +152,7 @@ return (
             
             
         </li>
-       
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <li className="dropdown">
   <span
     className="dropdown-title"
@@ -175,7 +175,7 @@ return (
     </ul>
   )}
 </li>
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <li className="dropdown" style={{ marginLeft: "15px" }}>
   <span className="dropdown-title" onClick={() => setShowProfileDropdown(!showProfileDropdown)}>
     <FontAwesomeIcon icon={faUser} /> Profile
