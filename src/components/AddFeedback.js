@@ -1,13 +1,12 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const AddFeedback = () => {
-  const [productId, setProductId] = useState("");
+  const location = useLocation();
+  const productId = new URLSearchParams(location.search).get("productId");
+
   const [feedback, setFeedback] = useState("");
   const [rating, setRating] = useState("");
-
-  const handleProductIdChange = (event) => {
-    setProductId(event.target.value);
-  };
 
   const handleFeedbackChange = (event) => {
     setFeedback(event.target.value);
@@ -19,7 +18,7 @@ const AddFeedback = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  
+
     fetch("http://localhost:8083/feedback/addfeedback", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -39,39 +38,21 @@ const AddFeedback = () => {
       })
       .catch((error) => {
         console.error("Error:", error);
-        alert("Feedback cannot be added since the product with the given ID does not exists.");
+        alert("Feedback cannot be added since the product with the given ID does not exist.");
         // Optionally display an error message to the user
       });
   };
-  
 
   return (
     <div className="add-feedback">
-      <h2>Add Feedback</h2>
+      <h1>Add Feedback</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="product-id">Product ID:</label>
-        <input
-          type="text"
-          id="product-id"
-          value={productId}
-          onChange={handleProductIdChange}
-        />
+        {/* <label htmlFor="product-id">Product ID:</label> */}
+        {/* <input type="text" id="product-id" value={productId} disabled /> */}
         <label htmlFor="feedback">Feedback:</label>
-        <textarea
-          id="feedback"
-          value={feedback}
-          onChange={handleFeedbackChange}
-        />
+        <textarea id="feedback" value={feedback} onChange={handleFeedbackChange} />
         <label htmlFor="rating">Rating:</label>
-        <input
-  type="number"
-  id="rating"
-  min="1"
-  max="5"
-  step="0.1"
-  value={rating}
-  onChange={handleRatingChange}
-/>
+        <input type="number" id="rating" min="1" max="5" step="0.1" value={rating} onChange={handleRatingChange} />
 
         <button type="submit">Submit</button>
       </form>

@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 
-
-const Feedback = () => {
-  const [productId, setProductId] = useState('');
+const GetFeedback = () => {
+  const location = useLocation();
+  const [productId, setProductId] = useState(new URLSearchParams(location.search).get('productId') || '');
   const [productData, setProductData] = useState([]);
 
-  const handleSubmit = async(event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    let pid = event.target.elements.productId.value
-    console.log(pid)
+    const pid = event.target.elements.productId.value;
     try {
       const response = await axios.get(`http://localhost:8083/feedback/getfeedback/${pid}`, {
         headers: { 'Access-Control-Allow-Origin': '*' },
@@ -30,18 +30,18 @@ const Feedback = () => {
       <center><h3>Product Feedbacks</h3></center>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="product-id">Enter Product Id:</label>
+          <label htmlFor="product-id">Your Product Id:</label>
           <input
             type="text"
             id="product-id"
-            name='productId'
+            name="productId"
             className="form-control"
             placeholder="Enter Product Id"
-            value={productId}
+            value={productId} disabled
             onChange={(event) => setProductId(event.target.value)}
           />
         </div>
-        <button className="submit-btn" type="submit">Submit</button>
+        <button className="submit-btn" type="submit">Lookup</button>
       </form>
       {productData.map((feedback, index) => (
         <div className="feedback" key={index}>
@@ -54,4 +54,4 @@ const Feedback = () => {
   );
 };
 
-export default Feedback;
+export default GetFeedback;
