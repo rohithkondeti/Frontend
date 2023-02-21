@@ -188,6 +188,9 @@ return (
       <li>
         <NavLink to="/viewprofile">View Profile</NavLink>
       </li>
+      <li>
+        <NavLink to="/">Log Out</NavLink>
+      </li>
     </ul>
   )}
                  </li>

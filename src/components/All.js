@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const All = () => {
   const [data2, setData2] = useState(null);
@@ -34,6 +35,14 @@ const All = () => {
             <p><b>Category:</b> {product.category}</p>
             <p><b>Price:</b> {product.price}</p>
             <p><b>Rating:</b> {product.rating}</p>
+            <div style={{display: 'flex', justifyContent: 'center', marginTop: '10px'}}>
+              <Link to="/addfeedback">
+                <button style={{margin: '5px'}} >Add Feedback</button>
+                </Link>
+                <Link to="/getfeedback">
+                <button style={{margin: '5px'}}>View Feedback</button>
+                </Link>
+              </div>
           </div>
         ))}
       </div>
