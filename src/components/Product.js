@@ -7,7 +7,7 @@ const Product = () => {
   return (
     <>
       <Navbar1 />
-      <section className="hero-section" style={{backgroundImage: "url(https://img.freepik.com/free-photo/cheerful-young-woman-thinking-buying-something-holding-shopping-bags-with-dreamy-smile-buying-sta_1258-127372.jpg?w=1380&t=st=1676870880~exp=1676871480~hmac=a17e901ba52450ba634a8ea38992afc38917a04e6b4554164c908aa923cc713e)", backgroundSize: "cover", backgroundPosition: "center", height: "100vh"}}>
+      <section className="hero-section" style={{backgroundImage: "url(https://img.freepik.com/free-photo/magnificent-woman-long-bright-skirt-dancing-studio-carefree-inspired-female-model-posing-with-pleasure-yellow_197531-11084.jpg?w=1060&t=st=1676976656~exp=1676977256~hmac=5081fe406cac2199638da9b525f9a30784a4a15398413b95b96ba88d5d112798)", backgroundSize: "cover", backgroundPosition: "center", height: "100vh"}}>
         <p>Welcome!</p>
         </section>
     </>
