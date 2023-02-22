@@ -7,6 +7,7 @@ const AddFeedback = () => {
 
   const [feedback, setFeedback] = useState("");
   const [rating, setRating] = useState("");
+  const [alertMessage, setAlertMessage] = useState("");
 
   const handleFeedbackChange = (event) => {
     setFeedback(event.target.value);
@@ -26,7 +27,7 @@ const AddFeedback = () => {
     })
       .then((response) => {
         if (response.ok) {
-          alert("Feedback successfully added");
+          setAlertMessage(<span style={{fontSize: "1.9em", color: "green"}}>Feedback successfully added</span>);
         } else {
           throw new Error("Failed to submit feedback");
         }
@@ -38,14 +39,24 @@ const AddFeedback = () => {
       })
       .catch((error) => {
         console.error("Error:", error);
-        alert("Feedback cannot be added since the product with the given ID does not exist.");
+        setAlertMessage("Feedback cannot be added since the product with the given ID does not exist.");
         // Optionally display an error message to the user
       });
   };
 
+  useEffect(() => {
+    if (alertMessage) {
+      const timer = setTimeout(() => {
+        setAlertMessage("");
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [alertMessage]);
+
   return (
     <div className="add-feedback">
       <h1>Add Feedback</h1>
+      {alertMessage && <div className="alert">{alertMessage}</div>}
       <form onSubmit={handleSubmit}>
         {/* <label htmlFor="product-id">Product ID:</label> */}
         {/* <input type="text" id="product-id" value={productId} disabled /> */}

@@ -948,7 +948,7 @@ p {
 }
 
 .main-nav1 {
-  background-color: #ffc0cb; /* Change this to your desired color */
+  background-color:  #ffc400;                    /*#ffc0cb; /* Change this to your desired color */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -962,3 +962,13 @@ body {
 }
 
 
+.main-nav2 {
+  background-color:  #8adbdb;                    /*#ffc0cb; /* Change this to your desired color */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 50px;
+  position: relative;
+  z-index: 1;
+}

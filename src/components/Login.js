@@ -4,6 +4,7 @@ import axios from "axios";
 const Login = () => {
   const [userName, setUserName] = useState("");
   const [password, setpassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,12 +15,12 @@ const Login = () => {
 
       // Store token in local storage
       localStorage.setItem("token", token);
-
+      localStorage.setItem("username", userName);
       // Redirect to dashboard or home page
       window.location.href = "/product";
     } catch (err) {
       console.error(err);
-      alert("Invalid login credentials");
+      setErrorMessage("Invalid login credentials");
     }
   };
 
@@ -38,6 +39,7 @@ const Login = () => {
         <button type="submit" style={{ width: "100%", padding: ".5rem", background: "lightblue", border: "none", borderRadius: "5px", color: "#fff" }}>
           Submit
         </button>
+        {errorMessage && <div style={{ color: "red", marginTop: "1rem", textAlign: "center" }}>{errorMessage}</div>}
       </form>
     </div>
   );

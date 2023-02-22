@@ -1,19 +1,82 @@
-import React from "react";
-import Navbar1 from "./Navbar1";
-import ProductIdDialog from "./ProductIdDialog";
- 
-const Product = () => {
+import { useState } from "react";
 
+const AddFeedback = () => {
+  const [productId, setProductId] = useState("");
+  const [feedback, setFeedback] = useState("");
+  const [rating, setRating] = useState("");
+
+  const handleProductIdChange = (event) => {
+    setProductId(event.target.value);
+  };
+
+  const handleFeedbackChange = (event) => {
+    setFeedback(event.target.value);
+  };
+
+  const handleRatingChange = (event) => {
+    setRating(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
   
+    fetch("http://localhost:8083/feedback/addfeedback", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ productId, feedback, rating }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("Feedback successfully added");
+        } else {
+          throw new Error("Failed to submit feedback");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Success:", data);
+        // Optionally display a success message or redirect the user to a thank you page
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("Feedback cannot be added since the product with the given ID does not exists.");
+        // Optionally display an error message to the user
+      });
+  };
+  
+
   return (
-    <>
-      <Navbar1 />
-      <section className="hero-section" style={{backgroundImage: "url(https://img.freepik.com/free-photo/cheerful-young-woman-thinking-buying-something-holding-shopping-bags-with-dreamy-smile-buying-sta_1258-127372.jpg?w=1380&t=st=1676870880~exp=1676871480~hmac=a17e901ba52450ba634a8ea38992afc38917a04e6b4554164c908aa923cc713e)", backgroundSize: "cover", backgroundPosition: "center", height: "100vh"}}>
-        <p>Welcome to </p>
-        <h1> Product Page</h1>
-      </section>
-    </>
+    <div className="add-feedback">
+      <h2>Add Feedback</h2>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="product-id">Product ID:</label>
+        <input
+          type="text"
+          id="product-id"
+          value={productId}
+          onChange={handleProductIdChange}
+        />
+        <label htmlFor="feedback">Feedback:</label>
+        <textarea
+          id="feedback"
+          value={feedback}
+          onChange={handleFeedbackChange}
+        />
+        <label htmlFor="rating">Rating:</label>
+        <input
+  type="number"
+  id="rating"
+  min="1"
+  max="5"
+  step="0.1"
+  value={rating}
+  onChange={handleRatingChange}
+/>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   );
 };
 
-export default Product;
+export default AddFeedback;

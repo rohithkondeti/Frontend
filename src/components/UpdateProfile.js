@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 
 const UpdateProfile = () => {
@@ -8,7 +9,7 @@ const UpdateProfile = () => {
   const [address, setAddress] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-
+  const [data, setData ] =useState("")
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -30,6 +31,7 @@ const UpdateProfile = () => {
       },
       body: JSON.stringify(data)
     });
+    // axios.get(`http://localhost:8082/customer/getcustomer/${id}`)
 
     if (response.ok) {
       setSuccessMessage("Customer details updated successfully.");

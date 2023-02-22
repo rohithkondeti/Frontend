@@ -19,7 +19,7 @@ const Navbar1 = () => {
     const [showRatedDropdown, setShowRatedDropdown] = useState(false);
     const [showFeedbackDropdown, setShowFeedbackDropdown] = useState(false);
      const [showProfileDropdown, setShowProfileDropdown] = useState(false);
-    
+    const name= localStorage.getItem('username')
 
 return (
 <>
@@ -178,16 +178,17 @@ return (
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <li className="dropdown" style={{ marginLeft: "15px" }}>
   <span className="dropdown-title" onClick={() => setShowProfileDropdown(!showProfileDropdown)}>
-    <FontAwesomeIcon icon={faUser} /> Profile
+    <FontAwesomeIcon icon={faUser} /> {name}
   </span>
   {showProfileDropdown && (
-    <ul className="dropdown-content">
+    <ul className="dropdown-content"> 
       <li>
-        <NavLink to="/updateprofile">Update Profile </NavLink>
+        <NavLink to="/updateprofile"> Profile </NavLink>
       </li>
       <li>
-        <NavLink to="/viewprofile">View Profile</NavLink>
+        <NavLink to="/"> View My Feedbacks </NavLink>
       </li>
+      
       <li>
         <NavLink to="/">Log Out</NavLink>
       </li>
