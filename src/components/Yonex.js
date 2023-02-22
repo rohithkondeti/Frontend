@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Yonex = () => { 
   const [data2, setData2] = useState(null);
@@ -34,6 +35,15 @@ const Yonex = () => {
             <p><b>Category:</b> {product.category}</p>
             <p><b>Price:</b> {product.price}</p>
             <p><b>Rating:</b> {product.rating}</p>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+  <Link to={`/addfeedback?productId=${product.id}`}>
+    <button style={{ margin: '5px' }}>Add Feedback</button>
+  </Link>
+  <div style={{ width: '20px' }}></div> {/* this is the space between the buttons */}
+  <Link to={`/getfeedback?productId=${product.id}`}>
+    <button style={{ margin: '5px' }}>View Feedback</button>
+  </Link>
+</div>
           </div>
         ))}
       </div>
