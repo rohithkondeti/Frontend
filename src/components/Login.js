@@ -36,7 +36,7 @@ const Login = () => {
           <label htmlFor="password">Password:</label>
           <input type="password" id="password" name="password" style={{ width: "100%", padding: ".5rem" }} onChange={(e) => setpassword(e.target.value)} />
         </div>
-        <button type="submit" style={{ width: "100%", padding: ".5rem", background: "lightblue", border: "none", borderRadius: "5px", color: "#fff" }}>
+        <button type="submit" style={{ width: "100%", padding: ".5rem", background: "blue", border: "none", borderRadius: "5px", color: "#fff" }}>
           Submit
         </button>
         {errorMessage && <div style={{ color: "red", marginTop: "1rem", textAlign: "center" }}>{errorMessage}</div>}

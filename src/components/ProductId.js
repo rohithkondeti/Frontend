@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import Navbar1 from "./Navbar1";
 
 const ProductId = () => {
   const [productId, setProductId] = useState('');
@@ -26,8 +26,10 @@ const ProductId = () => {
       setError('Product not found!');
     }
   };
-
+ 
   return (
+    <>
+    <Navbar1 />
     <div className="product-id-container">
       <h1 className="product-id-header"> </h1>
       <form onSubmit={handleSubmit} className="product-id-form">
@@ -84,6 +86,7 @@ const ProductId = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

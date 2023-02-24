@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Navbar1 from "./Navbar1";
 
 const UpdateProfile = () => {
   const [id, setId] = useState("");
@@ -10,6 +11,23 @@ const UpdateProfile = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [data, setData ] =useState("")
+  const userName = localStorage.getItem('username');
+  const token = localStorage.getItem('token');
+  useEffect(()=>{
+    axios.get(`http://localhost:8082/customer/getcustomer/${userName}`,
+    { headers: { Authorization: `Bearer ${token}` } }
+   )
+   .then(result=>{
+       setId(result.data.id);
+       setName(result.data.name);
+       setEmailId(result.data.emailId);
+       setPhoneNo(result.data.phoneNo);
+       setAddress(result.data.address);
+      
+   }).catch(error=>{
+       alert(error)
+   })
+},[])
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -20,6 +38,7 @@ const UpdateProfile = () => {
       phoneNo,
       address
     };
+    
 
     const token = localStorage.getItem("token");
 
@@ -44,39 +63,32 @@ const UpdateProfile = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          ID:
+    <>
+    <Navbar1 />
+    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#f2f2f2'}}>
+    <span style={{ color: 'red' , fontSize: '18px',paddingTop: '25px'}}>{errorMessage}</span>
+    <span style={{ color: 'green' , fontSize: '18px',paddingTop: '25px'}}>{successMessage}</span>
+    <form style={{display: 'flex', flexDirection: 'column', width: '300px'}} onSubmit={handleSubmit}>
+        <label>ID:</label>
           <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
-        </label>
         <br />
-        <label>
-          Name:
+        <label>Name:</label>
           <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-        </label>
         <br />
-        <label>
-          Email:
+        <label>Email: </label>
           <input type="text" value={emailId} onChange={(e) => setEmailId(e.target.value)} />
-        </label>
         <br />
-        <label>
-          Phone:
+        <label>Phone:</label>
           <input type="text" value={phoneNo} onChange={(e) => setPhoneNo(e.target.value)} />
-        </label>
         <br />
-        <label>
-          Address:
+        <label>Address:</label>
           <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
-        </label>
         <br />
         <button type="submit">Update</button>
         <br />
-        {successMessage && <p>{successMessage}</p>}
-        {errorMessage && <p>{errorMessage}</p>}
       </form>
     </div>
+    </>
   );
 };
 

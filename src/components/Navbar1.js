@@ -154,26 +154,26 @@ return (
         </li>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <li className="dropdown">
-  <span
+  {/* <span
     className="dropdown-title"
     onClick={() => setShowFeedbackDropdown(!showFeedbackDropdown)}
-  >
-    <FontAwesomeIcon icon={faComment} />
+  > */}
+    {/* <FontAwesomeIcon icon={faComment} />
     Feedback
   </span>
   {showFeedbackDropdown && (
-    <ul className="dropdown-content">
-      <li>
+    <ul className="dropdown-content"> */}
+      {/* <li>
         <NavLink to="/addfeedback">Add Feedback </NavLink>
       </li>
       <li>
         <NavLink to="/getfeedback">View Feedback</NavLink>
-      </li>
+      </li> */}
       {/* <li>
         <NavLink to="/updaterating">UpdateRating</NavLink>
       </li> */}
-    </ul>
-  )}
+    {/* </ul>
+  )} */}
 </li>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <li className="dropdown" style={{ marginLeft: "15px" }}>
@@ -186,7 +186,7 @@ return (
         <NavLink to="/updateprofile"> Profile </NavLink>
       </li>
       <li>
-        <NavLink to="/"> View My Feedbacks </NavLink>
+        <NavLink to="/ViewMyFeedback"> View My Feedbacks </NavLink>
       </li>
       
       <li>

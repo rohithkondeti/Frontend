@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
+import Navbar1 from './Navbar1';
 
 const GetFeedback = () => {
   const location = useLocation();
@@ -25,32 +26,30 @@ const GetFeedback = () => {
     }
   };
 
+  useEffect(()=>{
+      axios.get(`http://localhost:8083/feedback/getfeedback/${productId}`)
+      .then(result => {
+        setProductData(result.data)
+      }).catch(error => {
+
+      })
+},[])
+
   return (
+    <>
+    <Navbar1 />
     <div className="feedback-container">
       <center><h3>Product Feedbacks</h3></center>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="product-id">Your Product Id:</label>
-          <input
-            type="text"
-            id="product-id"
-            name="productId"
-            className="form-control"
-            placeholder="Enter Product Id"
-            value={productId} disabled
-            onChange={(event) => setProductId(event.target.value)}
-          />
-        </div>
-        <button className="submit-btn" type="submit">Lookup</button>
-      </form>
       {productData.map((feedback, index) => (
         <div className="feedback" key={index}>
           <p><b>Product Id:</b> {feedback.productId}</p>
+          <p><b>User:</b> {feedback.userName}</p>
           <p><b>Feedback:</b> {feedback.feedback}</p>
           <p><b>Rating:</b> {feedback.rating}</p>
         </div>
       ))}
     </div>
+    </>
   );
 };
 

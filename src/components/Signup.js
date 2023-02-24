@@ -20,6 +20,10 @@ const Signup = () => {
       setErrorMessage('Phone number should be 10 digits');
       return;
     }
+    if (password.length < 6) {
+      setErrorMessage('Password should be at least 6 characters');
+      return;
+    }
     let data = {
       name,
       emailId,

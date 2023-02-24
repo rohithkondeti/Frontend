@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import Navbar1 from "./Navbar1";
 
 const AddFeedback = () => {
   const location = useLocation();
@@ -8,6 +9,7 @@ const AddFeedback = () => {
   const [feedback, setFeedback] = useState("");
   const [rating, setRating] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
+  const userName = localStorage.getItem("username");
 
   const handleFeedbackChange = (event) => {
     setFeedback(event.target.value);
@@ -23,7 +25,7 @@ const AddFeedback = () => {
     fetch("http://localhost:8083/feedback/addfeedback", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ productId, feedback, rating }),
+      body: JSON.stringify({ productId, feedback, rating , userName}),
     })
       .then((response) => {
         if (response.ok) {
@@ -54,6 +56,8 @@ const AddFeedback = () => {
   }, [alertMessage]);
 
   return (
+    <>
+    <Navbar1 />
     <div className="add-feedback">
       <h1>Add Feedback</h1>
       {alertMessage && <div className="alert">{alertMessage}</div>}
@@ -68,6 +72,7 @@ const AddFeedback = () => {
         <button type="submit">Submit</button>
       </form>
     </div>
+    </>
   );
 };
 

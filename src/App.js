@@ -31,6 +31,7 @@ import GetFeedback from "./components/GetFeedback";
 import UpdateRating from "./components/UpdateRating";
 import UpdateProfile from "./components/UpdateProfile";
 import ViewProfile from "./components/ViewProfile";
+import ViewMyFeedback from "./components/ViewMyFeedback";
 
 
 const Home = () => {
@@ -283,6 +284,10 @@ const App = () => {
       </Route>
       <Route exact path="/viewprofile">
         <ViewProfile />
+      </Route>
+
+      <Route exact path="/ViewMyFeedback">
+        <ViewMyFeedback />
       </Route>
 
     </Switch>
